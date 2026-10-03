@@ -1,0 +1,15 @@
+.DS_Store
+.venv/
+__pycache__/
+*.egg-info/
+build/
+latex/build/
+latex/*.ttf
+latex/*.pdf
+latex/*.zip
+specimens/
+*.log
+
+# Downloaded, but under a license we don't use (CC BY-SA; see
+# allowed_licenses in config/sets.toml), so not redistributed here.
+sources/commons/Bullet QB Red TEST.svg

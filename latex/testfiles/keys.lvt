@@ -1,0 +1,35 @@
+\input{regression-test}
+\documentclass{article}
+\usepackage{nycbullets}
+\ExplSyntaxOn
+\cs_new_protected:Npn \testcodepoint #1#2
+  {
+    \nycbulletsetup { set = #1 }
+    \setbox0 \hbox { \nycbullet {#2} }
+    \TYPE { #1 / #2 ~ -> ~ \nycbullets_codepoint:nn {#1} {#2} }
+  }
+\ExplSyntaxOff
+\START
+\begin{document}
+\TEST{Standard keys}{%
+  \testcodepoint{std}{F}%
+  \testcodepoint{std}{Fd}%
+  \testcodepoint{std}{SIRd}%
+  \testcodepoint{std}{-}%
+  \testcodepoint{std}{M.brown}%
+}
+\TEST{Set aliases}{%
+  \testcodepoint{helvetica}{F}%
+  \testcodepoint{standard}{F}%
+}
+\TEST{Unknown key}{%
+  \setbox0\hbox{\nycbullet{NOPE}}%
+}
+\TEST{Unknown set}{%
+  \setbox0\hbox{\nycbullet[set=nowhere]{F}}%
+}
+\TEST{Set as a bare option}{%
+  \setbox0\hbox{\nycbullet[helvetica]{F}}%
+  \TYPE{\the\wd0 > 0pt: \ifdim\wd0>0pt yes\else no\fi}%
+}
+\end{document}

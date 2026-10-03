@@ -1,0 +1,60 @@
+# Bullet sets.  Each [[set]] becomes one font, NYCSubwayBullets-<name>.ttf.
+#
+#   id          short identifier used in file names, the LaTeX `set=` option
+#               and as the key suffix in the "All" font
+#   name        font style name (no spaces)
+#   categories  Wikimedia Commons categories whose SVG files form the set
+#   recurse     also include files in subcategories (recursively)
+#
+# The order of the sets is the "home set" priority for the All font: a file
+# appearing in several sets is assigned to the first one listed.
+
+commons_parent = "Category:New York City Subway bullets"
+
+# Licenses (Commons "LicenseShortName") of files we put in the fonts.  Files
+# under any other license are skipped by `nycbullets map`.  Licenses that
+# require attribution (CC BY) are credited in the font metadata,
+# fonts/CREDITS.md and the LaTeX documentation.  Share-alike licenses are
+# not allowed: they would apply to the whole font.
+allowed_licenses = ["Public domain", "CC0", "CC BY 4.0"]
+
+[[set]]
+id = "std"
+name = "Standard"
+categories = ["Category:New York City Subway bullets/Standard set"]
+
+[[set]]
+id = "helv"
+name = "Helvetica"
+categories = ["Category:New York City Subway bullets/Helvetica set"]
+
+[[set]]
+id = "nycta"
+name = "NYCTA"
+categories = ["Category:New York City Subway bullets/NYCTA Standard Medium set"]
+
+[[set]]
+id = "r62a"
+name = "R62A"
+categories = ["Category:New York City Subway bullets/R62A"]
+
+[[set]]
+id = "r32"
+name = "R32"
+categories = ["Category:New York City Subway bullets/R32"]
+
+[[set]]
+id = "retired"
+name = "Retired"
+categories = ["Category:Retired New York City Subway bullets"]
+recurse = true
+
+[[set]]
+id = "legacy"
+name = "Legacy"
+categories = ["Category:New York City Subway bullets/Legacy set"]
+
+# The combined font.  Every distinct file from the sets above, once.
+[all]
+id = "all"
+name = "All"
