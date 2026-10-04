@@ -73,3 +73,19 @@ def test_sort_key_order():
         "-", "-d", "1", "1d", "2", "10",
         "A", "A.gray", "Ad", "Ad.gray", "AA.1967-1979", "B",
     ]
+
+
+@pytest.mark.parametrize("key,expected", [
+    ("1", "1"), ("Fd", "F"), ("Bsd", "B"), ("SIRd", "SIR"),
+    ("M.brown", "M"), ("QBd.1979-1985", "QB"), ("-d", "blank"),
+    ("JFK", "airplane"), ("S6d", "S"), ("SR", "S with small R"),
+    ("SR.helv", "S with small R"), ("SR.blue", "S"), ("SFd.silver", "S"),
+])
+def test_symbol(key, expected):
+    assert mapping.symbol(key) == expected
+
+
+def test_color_name():
+    assert mapping.color_name((0xEE, 0x35, 0x2E, 255)) == "red"
+    assert mapping.color_name((0xFF, 0x00, 0x00, 255)) == "red"
+    assert mapping.color_name((0xA7, 0xA9, 0xAC, 255)) == "light gray"

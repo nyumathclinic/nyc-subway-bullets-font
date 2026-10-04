@@ -6,7 +6,11 @@ The result lives in data/mappings/<set>.tsv, one row per file:
     file        the file name in sources/commons/
     key         what you type to get the bullet: F, Fd, M.brown, SIRd, ...
     codepoint   the bullet's PUA code point, e.g. E00A
-    description human-readable description (from the SVG <title> if any)
+    description what the bullet looks like: the symbol on it, then the
+                color and shape of the background, e.g. "1 red circle" or
+                "B yellow diamond" (generated from the artwork)
+    service     the service the bullet stands for, e.g. "Broadway–Seventh
+                Avenue Local" (filled in by hand; used in the documentation)
 
 Keys have the form  <base><mods>[.<variant>...]  where
 
@@ -41,18 +45,17 @@ import csv
 import json
 import re
 import sys
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from pathlib import Path
 
-from lxml import etree
-
+from . import svgnorm
 from .config import (MANIFEST, MAPPING_DIR, SOURCE_DIR, BulletSet,
                      allowed_licenses, load_config)
 
 PUA_START = 0xE000
 TODO = "TODO"
 
-FIELDS = ["file", "key", "codepoint", "description"]
+FIELDS = ["file", "key", "codepoint", "description", "service"]
 
 KEY_RE = re.compile(r"^(-|[0-9]+|[A-Z][A-Z0-9]*|Special)(s?d?)((?:\.[a-z0-9-]+)*)$")
 
@@ -63,6 +66,7 @@ class Row:
     key: str
     codepoint: int
     description: str
+    service: str = ""
 
     def as_dict(self) -> dict[str, str]:
         return {
@@ -70,6 +74,7 @@ class Row:
             "key": self.key,
             "codepoint": f"{self.codepoint:04X}",
             "description": self.description,
+            "service": self.service,
         }
 
 
@@ -137,18 +142,71 @@ def guess(filename: str) -> tuple[str, str] | None:
 # Descriptions
 # ---------------------------------------------------------------------------
 
-def describe(filename: str) -> str:
-    """The SVG's <title>, if it has one, otherwise the file name stem."""
+# Names for the background colors in the artwork.  A color not listed
+# gets the name of the nearest one that is.
+COLOR_NAMES = {
+    "red": ["#EE352E", "#E60D2E", "#E00034", "#E30F00"],
+    "orange": ["#FF6319", "#F56600"],
+    "yellow": ["#FCCC0A", "#F7D117", "#F0AB00"],
+    "lime green": ["#6CBE45", "#7DBA00"],
+    "green": ["#00933C", "#009645", "#00AF3F"],
+    "turquoise": ["#00ADD0", "#1E9DBF", "#00A3E0"],
+    "blue": ["#0039A6", "#2850AD", "#0033AB", "#0065BD", "#0078C6"],
+    "dark blue": ["#002856", "#0F2B51"],
+    "purple": ["#B933AD", "#BA1FB5"],
+    "magenta": ["#DA39AF"],
+    "brown": ["#996633", "#965700"],
+    "light gray": ["#A7A9AC"],
+    "dark gray": ["#808183", "#808080", "#4D4D4D"],
+    "black": ["#000000", "#2A2623"],
+    "white": ["#FFFFFF"],
+}
 
-    path = SOURCE_DIR / filename
-    try:
-        root = etree.parse(str(path)).getroot()
-        title = root.find("{http://www.w3.org/2000/svg}title")
-        if title is not None and title.text and title.text.strip():
-            return " ".join(title.text.split())
-    except (OSError, etree.XMLSyntaxError):
-        pass
-    return Path(filename).stem
+
+def color_name(color: svgnorm.Color) -> str:
+    def distance(hex_color: str) -> int:
+        rgb = (int(hex_color[i:i + 2], 16) for i in (1, 3, 5))
+        return sum((a - b) ** 2 for a, b in zip(color, rgb))
+
+    return min(((distance(h), name) for name, hexes in COLOR_NAMES.items()
+                for h in hexes))[1]
+
+
+# Bullets that don't show their route designation.
+SYMBOLS = {
+    "-": "blank",
+    "JFK": "airplane",
+    "Special": "S",
+    "S6": "S",
+    "SB": "S",
+    "SF": "S with small F",
+    "SR": "S with small R",
+}
+
+# ... and variants of those that show a plain S.
+PLAIN_S = {("SF", "silver"), ("SR", "blue")}
+
+
+def symbol(key: str) -> str:
+    """What is printed on the bullet with this key."""
+
+    m = KEY_RE.match(key)
+    if not m:
+        return key
+    base, variants = m.group(1), m.group(3).split(".")
+    if any((base, v) in PLAIN_S for v in variants):
+        return "S"
+    return SYMBOLS.get(base, base)
+
+
+def describe(filename: str, key: str) -> str:
+    """What the bullet looks like: "1 red circle", "B yellow diamond"."""
+
+    src = svgnorm.load_source(SOURCE_DIR / filename)
+    shape = "diamond" if src.is_diamond else "circle"
+    sym = symbol(key)
+    sep = ", " if " " in sym else " "    # "S with small R, dark gray circle"
+    return f"{sym}{sep}{color_name(src.background)} {shape}"
 
 
 # ---------------------------------------------------------------------------
@@ -160,7 +218,8 @@ def read_table(path: Path) -> list[Row]:
         return []
     with path.open(newline="") as f:
         return [
-            Row(r["file"], r["key"], int(r["codepoint"], 16), r["description"])
+            Row(r["file"], r["key"], int(r["codepoint"], 16), r["description"],
+                r.get("service", ""))
             for r in csv.DictReader(f, delimiter="\t")
         ]
 
@@ -226,8 +285,7 @@ def renumber(rows: list[Row]) -> list[Row]:
     """Reassign code points from PUA_START in key order."""
 
     rows = sorted(rows, key=lambda r: sort_key(r.key))
-    return [Row(r.file, r.key, PUA_START + i, r.description)
-            for i, r in enumerate(rows)]
+    return [replace(r, codepoint=PUA_START + i) for i, r in enumerate(rows)]
 
 
 def update_set(bset: BulletSet, files: list[str]) -> list[Row]:
@@ -275,7 +333,7 @@ def update_set(bset: BulletSet, files: list[str]) -> list[Row]:
                 key = TODO
         if key != TODO:
             used.add(key)
-        new_rows.append(Row(f, key, 0, describe(f)))
+        new_rows.append(Row(f, key, 0, describe(f, key)))
 
     for r in sorted(new_rows, key=lambda r: sort_key(r.key)):
         r.codepoint = next_cp
@@ -314,7 +372,7 @@ def derive_all(sets: list[BulletSet], all_set: BulletSet,
                 continue
             placed.add(r.file)
             key = r.key if (i == 0 or r.key == TODO) else tag_key(r.key, bset.id)
-            rows.append(Row(r.file, key, old.get(r.file, 0), r.description))
+            rows.append(replace(r, key=key, codepoint=old.get(r.file, 0)))
 
     for r in sorted((r for r in rows if r.file not in old),
                     key=lambda r: sort_key(r.key)):

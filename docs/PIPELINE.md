@@ -71,12 +71,16 @@ Every bullet gets a **key**, which is what you type, and a **Private Use
 Area code point**. These live in `data/mappings/<set>.tsv`, one table per
 set, which is the place to review and fix things:
 
-| column      | meaning                                              |
-|-------------|------------------------------------------------------|
-| file        | file name in `sources/commons/`                      |
-| key         | e.g. `F`, `Fd`, `SIRd`, `M.brown`, `AA.1967-1979`    |
-| codepoint   | hex, e.g. `E00F`                                     |
-| description | from the SVG's `<title>`, or the file name           |
+| column      | meaning                                                        |
+|-------------|----------------------------------------------------------------|
+| file        | file name in `sources/commons/`                                |
+| key         | e.g. `F`, `Fd`, `SIRd`, `M.brown`, `AA.1967-1979`              |
+| codepoint   | hex, e.g. `E00F`                                               |
+| description | what it looks like, e.g. `1 red circle`, from the artwork      |
+| service     | e.g. `Broadway–Seventh Avenue Local`; empty for new files, so fill it in by hand |
+
+The description and service appear in the documentation's key tables
+(and the HTML specimen), not in the fonts.
 
 **Licenses.** `allowed_licenses` in `config/sets.toml` lists the licenses
 that are acceptable in the fonts. It is currently public domain, CC0 and

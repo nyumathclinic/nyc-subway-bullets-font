@@ -136,6 +136,17 @@ class Source:
 
         return self.fill_ratio < 0.65
 
+    @property
+    def background(self) -> Color:
+        """The color of the largest shape: the circle or diamond."""
+
+        def area(d: str) -> float:
+            path = pathops.Path()
+            parse_path(d, path.getPen())
+            return abs(path.area)
+
+        return max(self.shapes, key=lambda s: area(s[0]))[2]
+
 
 SVG_NS = "{http://www.w3.org/2000/svg}"
 CSS_RULE_RE = re.compile(r"([^{}]+)\{([^{}]*)\}")

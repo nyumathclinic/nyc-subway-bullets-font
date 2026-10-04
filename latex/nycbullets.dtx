@@ -29,20 +29,29 @@
   {\setmonofont{Menlo}[Scale=MatchLowercase]}
   {\setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]}
 % The key tables are as wide as their contents, so that descriptions don't
-% wrap, and centered on the text block; a table wider than the text block
-% sticks out into both margins.
+% wrap, and centered on the page (not the text block, which l3doc sets off
+% to the right), so that wide ones stick out evenly into both margins.
+% Unequal glue -\nycbulletsshift and +\nycbulletsshift on either side moves
+% the table's center from the text block's to the page's.
+% The All table, with its long tagged keys, is a size smaller to fit.
+\newdimen\nycbulletsshift
+\def\nycbulletsallid{all}
 \NewDocumentEnvironment{nycbulletstable}{mm}
   {%
     \subsection{#2 (\texttt{set=#1})}
     \nycbulletsetup{set=#1}%
-    \small
+    \def\nycbulletsthisid{#1}%
+    \ifx\nycbulletsthisid\nycbulletsallid \footnotesize \else \small \fi
     \setlength\tabcolsep{4pt}%
     \renewcommand\arraystretch{1.6}%
-    \setlength\LTleft{0pt plus 1fill minus 1fill}%
-    \setlength\LTright{0pt plus 1fill minus 1fill}%
-    \begin{longtable}{@{}c>{\ttfamily}lrl@{}}
+    \setlength\nycbulletsshift
+      {\dimexpr 1in + \hoffset + \oddsidemargin + \textwidth/2
+        - \paperwidth/2\relax}%
+    \LTleft=-\nycbulletsshift plus 1fill minus 1fill\relax
+    \LTright=\nycbulletsshift plus 1fill minus 1fill\relax
+    \begin{longtable}{@{}c>{\ttfamily}lrll@{}}
       \toprule
-      Bullet & \normalfont Key & Code point & Description \\
+      Bullet & \normalfont Key & Code point & Description & Service \\
       \midrule
       \endhead
       \bottomrule
@@ -55,8 +64,8 @@
   {\nycbulletsinput{nycbullets-keytable-#1.tex}}
 % The letter in a bullet sits 0.1em per unit of scale above the baseline:
 % lower the bullets so that it lines up with the text.
-\NewDocumentCommand\nycbulletsrow{mmm}
-  {\nycbullet[scale=2,raise=-0.2em]{#1} & \detokenize{#1} & \texttt{U+#2} & #3 \\}
+\NewDocumentCommand\nycbulletsrow{mmmm}
+  {\nycbullet[scale=2,raise=-0.2em]{#1} & \detokenize{#1} & \texttt{U+#2} & #3 & #4 \\}
 \begin{document}
   \DocInput{nycbullets.dtx}
 \end{document}
@@ -71,6 +80,18 @@
 % \date{Released 2026-10-03}
 %
 % \maketitle
+% 
+% \begin{quotation}\noindent 
+% You must take the \nycbullet[scale=1.3,raise=-0.1em]{A} train \\
+% To go to Sugar Hill way up in Harlem \\
+% \hfill --- Ella Fitzgerald 
+% \end{quotation}
+%
+% \begin{quotation}\noindent 
+%  Same faces every day, but you don't know their names \\
+%  Party people going places on the \nycbullet[scale=1.3,raise=-0.1em]{D} train \\
+% \hfill --- Beastie Boys
+% \end{quotation}
 %
 % \begin{documentation}
 %

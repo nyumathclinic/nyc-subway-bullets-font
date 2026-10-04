@@ -82,7 +82,7 @@ def keytable(bset: BulletSet, rows: list[mapping.Row]) -> str:
     for r in sorted(rows, key=lambda r: r.codepoint):
         lines.append(
             f"\\nycbulletsrow{{{r.key}}}{{{r.codepoint:04X}}}"
-            f"{{{escape(r.description)}}}"
+            f"{{{escape(r.description)}}}{{{escape(r.service)}}}"
         )
     lines.append("\\end{nycbulletstable}")
     return "\n".join(lines) + "\n"

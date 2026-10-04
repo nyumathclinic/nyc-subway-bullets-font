@@ -69,6 +69,7 @@ def run() -> None:
                 f'<div class="key">{html.escape(r.key)}</div>'
                 f'<div class="cp">U+{r.codepoint:04X}</div>'
                 f'<div class="desc">{html.escape(r.description)}</div>'
+                f'<div class="desc">{html.escape(r.service)}</div>'
                 '</div>'
             )
         sections.append(
