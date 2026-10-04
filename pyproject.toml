@@ -3,6 +3,8 @@ name = "nycbullets"
 version = "0.1.0"
 description = "Build OpenType color fonts (SVG + COLR) from the NYC Subway bullets on Wikimedia Commons"
 requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
 authors = [{ name = "Matthew Leingang", email = "mpl5@nyu.edu" }]
 dependencies = [
     "requests>=2.31",
@@ -23,7 +25,7 @@ docs = [
 ]
 
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling>=1.27"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]

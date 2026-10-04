@@ -73,3 +73,17 @@ make check   # Python and l3build tests
 
 See [docs/PIPELINE.md](docs/PIPELINE.md) for what each step does, how to
 edit the keys, and how to refresh from Commons.
+
+## License
+
+| Component                                              | License                                  |
+|--------------------------------------------------------|------------------------------------------|
+| Python pipeline (`src/`, `tests/`, build files)        | [MIT](LICENSE)                           |
+| LaTeX package (`latex/`)                               | [LPPL 1.3c](LICENSES/LPPL-1.3c.txt) or later |
+| Fonts (`fonts/*.ttf`)                                  | [CC0 1.0](LICENSES/CC0-1.0.txt), except the bullets credited in [fonts/CREDITS.md](fonts/CREDITS.md), which keep their own licenses |
+| Key tables and configuration (`data/`, `config/`)      | [CC0 1.0](LICENSES/CC0-1.0.txt)          |
+| Documentation (`docs/`, this README)                   | [CC BY 4.0](LICENSES/CC-BY-4.0.txt)      |
+| Downloaded artwork (`sources/`)                        | as recorded for each file in `sources/manifest.json` (public domain or CC BY 4.0) |
+
+Not affiliated with or endorsed by the MTA; the bullets may be trademarks
+of the MTA.

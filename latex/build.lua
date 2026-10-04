@@ -22,3 +22,15 @@ checkruns    = 1
 tdslocations = {
   "fonts/truetype/public/nycbullets/*.ttf",
 }
+
+-- Metadata for `l3build upload` (CTAN).  The fonts are CC0, except for
+-- the bullets credited in the documentation, which are CC BY 4.0.
+uploadconfig = {
+  pkg         = "nycbullets",
+  author      = "Matthew Leingang",
+  license     = {"lppl1.3c", "cc0", "cc-by-4"},
+  summary     = "New York City Subway route bullets for LuaLaTeX",
+  repository  = "https://github.com/nyumathclinic/nyc-subway-bullets-font",
+  bugtracker  = "https://github.com/nyumathclinic/nyc-subway-bullets-font/issues",
+  home        = "https://nyumathclinic.github.io/nyc-subway-bullets-font/",
+}

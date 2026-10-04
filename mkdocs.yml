@@ -5,6 +5,9 @@ site_url: https://nyumathclinic.github.io/nyc-subway-bullets-font/
 repo_url: https://github.com/nyumathclinic/nyc-subway-bullets-font
 repo_name: nyumathclinic/nyc-subway-bullets-font
 edit_uri: edit/main/docs/
+copyright: >-
+  Not affiliated with or endorsed by the MTA; the bullets may be
+  trademarks of the MTA.
 
 theme:
   name: material

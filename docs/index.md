@@ -88,3 +88,18 @@ make check   # Python and l3build tests
 
 See [Building the fonts](PIPELINE.md) for what each step does, how to edit
 the keys, and how to refresh from Commons.
+
+## License
+
+The fonts are dedicated to the public domain under
+[CC0 1.0](https://github.com/nyumathclinic/nyc-subway-bullets-font/blob/main/LICENSES/CC0-1.0.txt),
+except the bullets listed in the [credits](credits.md), which keep their
+own licenses. The LaTeX package is under the
+[LaTeX Project Public License 1.3c](https://github.com/nyumathclinic/nyc-subway-bullets-font/blob/main/LICENSES/LPPL-1.3c.txt)
+or later, the build pipeline under the
+[MIT license](https://github.com/nyumathclinic/nyc-subway-bullets-font/blob/main/LICENSE),
+and this documentation under
+[CC BY 4.0](https://github.com/nyumathclinic/nyc-subway-bullets-font/blob/main/LICENSES/CC-BY-4.0.txt).
+
+Not affiliated with or endorsed by the MTA; the bullets may be trademarks
+of the MTA.

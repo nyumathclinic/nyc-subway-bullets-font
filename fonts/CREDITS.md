@@ -5,9 +5,14 @@
 The bullet artwork comes from the Wikimedia Commons category
 [New York City Subway bullets](https://commons.wikimedia.org/wiki/Category:New_York_City_Subway_bullets).
 Nearly all of it is the work of the Metropolitan Transportation
-Authority and is in the public domain. The bullets below are under
-licenses that require attribution.
+Authority and is in the public domain. The fonts are dedicated to
+the public domain under
+[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/),
+except the bullets below, which are under licenses that require
+attribution.
 
 | Bullet | Author | License | Fonts |
 |--------|--------|---------|-------|
 | [Special (1967-1979)](https://commons.wikimedia.org/wiki/File:Special_(1967-1979).svg) | Avy9ishere | CC BY 4.0 | NYCSubwayBullets-Retired.ttf, NYCSubwayBullets-All.ttf |
+
+Not affiliated with or endorsed by the MTA; the bullets may be trademarks of the MTA.

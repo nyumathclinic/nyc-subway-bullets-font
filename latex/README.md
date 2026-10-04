@@ -16,6 +16,10 @@ See `nycbullets.pdf` for usage and the full list of bullets.
 ## License
 
 The LaTeX code may be distributed and/or modified under the conditions of
-the LaTeX Project Public License, version 1.3c or later. The bullet artwork
-in the fonts is in the public domain, except for the few bullets credited
-in the "Credits" section of `nycbullets.pdf`.
+the LaTeX Project Public License, version 1.3c or later. The fonts are
+dedicated to the public domain under CC0 1.0, except for the few bullets
+credited in the "Credits" section of `nycbullets.pdf`, which are under
+CC BY 4.0.
+
+Not affiliated with or endorsed by the MTA; the bullets may be trademarks
+of the MTA.

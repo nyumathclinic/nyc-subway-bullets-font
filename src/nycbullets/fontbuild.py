@@ -149,12 +149,18 @@ def copyright_notice(rows: list[mapping.Row]) -> str:
     return notice
 
 
+TRADEMARK = ("Not affiliated with or endorsed by the MTA; the bullets may be "
+             "trademarks of the MTA.")
+LICENSE_URL = "https://creativecommons.org/publicdomain/zero/1.0/"
+
+
 def license_notice(rows: list[mapping.Row]) -> str:
     credits = credits_for({r.file for r in rows})
     notice = ("The bullet artwork is from "
               "https://commons.wikimedia.org/wiki/"
               "Category:New_York_City_Subway_bullets and is in the public "
-              "domain")
+              "domain. This font is dedicated to the public domain under "
+              "CC0 1.0")
     if credits:
         notice += (", except for the bullets credited in the copyright "
                    "notice, which are used under the licenses stated there")
@@ -173,8 +179,11 @@ def write_credits(fonts: list[tuple[BulletSet, list[mapping.Row]]]) -> Path:
         "[New York City Subway bullets]"
         "(https://commons.wikimedia.org/wiki/Category:New_York_City_Subway_bullets).",
         "Nearly all of it is the work of the Metropolitan Transportation",
-        "Authority and is in the public domain. The bullets below are under",
-        "licenses that require attribution.",
+        "Authority and is in the public domain. The fonts are dedicated to",
+        "the public domain under",
+        "[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/),",
+        "except the bullets below, which are under licenses that require",
+        "attribution.",
         "",
         "| Bullet | Author | License | Fonts |",
         "|--------|--------|---------|-------|",
@@ -186,6 +195,7 @@ def write_credits(fonts: list[tuple[BulletSet, list[mapping.Row]]]) -> Path:
     for c in credits_for(set(by_file)):
         lines.append(f"| [{c.title}]({c.page}) | {c.artist} | {c.license} | "
                      f"{', '.join(by_file[c.file])} |")
+    lines += ["", TRADEMARK]
     path = FONT_DIR / "CREDITS.md"
     path.write_text("\n".join(lines) + "\n")
     return path
@@ -283,6 +293,8 @@ def build_font(bset: BulletSet, rows: list[mapping.Row],
                        "F, Fd or M.brown, or use the Private Use Area code "
                        "points.",
         "licenseDescription": license_notice(rows),
+        "licenseInfoURL": LICENSE_URL,
+        "trademark": TRADEMARK,
     })
 
     pua = [r.codepoint for r in rows]
