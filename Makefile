@@ -10,7 +10,7 @@
 #   make doc        typeset latex/nycbullets.pdf
 #   make check      run the Python tests and the l3build tests
 #   make ctan       build the CTAN archive latex/nycbullets-ctan.zip
-#   make install    install the package into your TEXMFHOME
+#   make install    install the package and its documentation into your TEXMFHOME
 #   make all        download, mappings, fonts, specimens, latex, doc
 #
 # See docs/PIPELINE.md for details.
@@ -55,8 +55,11 @@ check: latex
 ctan: latex
 	cd latex && $(L3BUILD) ctan
 
+# texdoc trusts an ls-R index in TEXMFHOME, so refresh it if there is one.
 install: latex
-	cd latex && $(L3BUILD) install
+	cd latex && $(L3BUILD) install --full
+	home=$$(kpsewhich -var-value TEXMFHOME); \
+	if [ -f "$$home/ls-R" ]; then mktexlsr "$$home"; fi
 
 clean:
 	cd latex && $(L3BUILD) clean

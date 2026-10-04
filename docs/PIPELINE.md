@@ -221,7 +221,8 @@ targets below run `make latex` first:
 - `make doc` typesets `nycbullets.pdf` and copies it to `docs/`;
 - `make check` runs pytest and `l3build check`;
 - `make ctan` builds the CTAN archive;
-- `make install` installs into your `TEXMFHOME`.
+- `make install` installs the package and its documentation into your
+  `TEXMFHOME`, so `texdoc nycbullets` finds it.
 
 The package looks up bullets by code point (`\char`) rather than through
 ligatures, and turns on `luaotfload`'s `colr` feature. It also works with
