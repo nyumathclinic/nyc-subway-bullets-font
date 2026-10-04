@@ -19,12 +19,28 @@
 \documentclass[full]{l3doc}
 \usepackage{nycbullets}
 \usepackage{longtable,booktabs}
+% Helvetica, like the MTA's signs; TeX Gyre Heros is a free clone of it.
+\IfFontExistsTF{Helvetica}
+  {\setmainfont{Helvetica}\setsansfont{Helvetica}}
+  {\setmainfont{TeX Gyre Heros}\setsansfont{TeX Gyre Heros}}
+% Menlo, Apple's companion monospace to Helvetica; DejaVu Sans Mono is the
+% free font it is based on.
+\IfFontExistsTF{Menlo}
+  {\setmonofont{Menlo}[Scale=MatchLowercase]}
+  {\setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]}
+% The key tables are as wide as their contents, so that descriptions don't
+% wrap, and centered on the text block; a table wider than the text block
+% sticks out into both margins.
 \NewDocumentEnvironment{nycbulletstable}{mm}
   {%
     \subsection{#2 (\texttt{set=#1})}
     \nycbulletsetup{set=#1}%
     \small
-    \begin{longtable}{@{}c>{\ttfamily}lr>{\raggedright\arraybackslash}p{0.45\linewidth}@{}}
+    \setlength\tabcolsep{4pt}%
+    \renewcommand\arraystretch{1.6}%
+    \setlength\LTleft{0pt plus 1fill minus 1fill}%
+    \setlength\LTright{0pt plus 1fill minus 1fill}%
+    \begin{longtable}{@{}c>{\ttfamily}lrl@{}}
       \toprule
       Bullet & \normalfont Key & Code point & Description \\
       \midrule
@@ -37,8 +53,10 @@
   {\begingroup\catcode`\%=14 \input{#1}\endgroup}
 \NewDocumentCommand\nycbulletsinputtable{m}
   {\nycbulletsinput{nycbullets-keytable-#1.tex}}
+% The letter in a bullet sits 0.1em per unit of scale above the baseline:
+% lower the bullets so that it lines up with the text.
 \NewDocumentCommand\nycbulletsrow{mmm}
-  {\nycbullet[scale=1.5]{#1} & \detokenize{#1} & \texttt{U+#2} & #3 \\}
+  {\nycbullet[scale=2,raise=-0.2em]{#1} & \detokenize{#1} & \texttt{U+#2} & #3 \\}
 \begin{document}
   \DocInput{nycbullets.dtx}
 \end{document}

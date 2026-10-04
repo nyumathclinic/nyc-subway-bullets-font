@@ -1,37 +1,37 @@
 file	key	codepoint	description
-NYCS-bull-trans-A-Std.svg	A	E000	NYCS Bullet, Standard Set - A Local
-NYCS-bull-trans-B-Std.svg	B	E001	NYCS Bullet, Standard Set - B Local
-NYCS-bull-trans-Bd-Std.svg	Bd	E002	NYCS Bullet, Standard Set - B Express
-NYCS-bull-trans-Bs-Std.svg	Bs	E003	NYCS Bullet, Standard Set - B South Local (1986–1988)
-NYCS-bull-trans-Bsd-Std.svg	Bsd	E004	NYCS Bullet, Standard Set - B South Express (1986–1988)
-NYCS-bull-trans-C-Std.svg	C	E005	NYCS Bullet, Standard Set - C Local
-NYCS-bull-trans-Cd-Std.svg	Cd	E006	NYCS Bullet, Standard Set - C Express
-NYCS-bull-trans-D-Std.svg	D	E007	NYCS Bullet, Standard Set - D Local
-NYCS-bull-trans-Ds-Std.svg	Ds	E008	NYCS Bullet, Standard Set - D South Local (1986–1988)
-NYCS-bull-trans-E-Std.svg	E	E009	NYCS Bullet, Standard Set - E Local
-NYCS-bull-trans-F-Std.svg	F	E00A	NYCS Bullet, Standard Set - F Local
-NYCS-bull-trans-G-Std.svg	G	E00B	NYCS Bullet, Standard Set - G Local
-NYCS-bull-trans-H-Std.svg	H	E00C	NYCS Bullet, Standard Set - H Local
-NYCS-bull-trans-J-Std.svg	J	E00D	NYCS Bullet, Standard Set - J Local
-NYCS-bull-trans-Jd-Std.svg	Jd	E00E	NYCS Bullet, Standard Set - J Express
-NYCS-bull-trans-JFK.svg	JFK	E00F	NYCS-bull-trans-JFK
-NYCS-bull-trans-K-Std.svg	K	E010	NYCS Bullet, Standard Set - K Local
-NYCS-bull-trans-L-Std.svg	L	E011	NYCS Bullet, Standard Set - L Local
-NYCS-bull-trans-M-Std-brown.svg	M.brown	E012	NYCS Bullet, Standard Set - M Local (1979–2010)
-NYCS-bull-trans-Md-Std-brown.svg	Md.brown	E013	NYCS Bullet, Standard Set - M Express (2001–2010)
-NYCS-bull-trans-N-Std.svg	N	E014	NYCS Bullet, Standard Set - N Local
-NYCS-bull-trans-P-Std.svg	P	E015	NYCS Bullet, Standard Set - P Local (R32)
-NYCS-bull-trans-Q-Std.svg	Q	E016	NYCS Bullet, Standard Set - Q Local
-NYCS-bull-trans-Q-Std-orange.svg	Q.orange	E017	NYCS Bullet, Standard Set - Q Local (1988–2001)
-NYCS-bull-trans-R-Std.svg	R	E018	NYCS Bullet, Standard Set - R Local
-NYCS-bull-trans-Rd-Std-brown.svg	Rd.brown	E019	NYCS Bullet, Standard Set - R Express (1985–1987)
-NYCS-bull-trans-S6-Std.svg	S6	E01A	NYCS Bullet, Standard Set - Sixth Avenue Shuttles (1997–2000 and 2001)
-NYCS-bull-trans-SB-Std.svg	SB	E01B	NYCS Bullet, Standard Set - 63rd Street Shuttle (1998–1999)
-NYCS-bull-trans-SF-Std-silver.svg	SF.silver	E01C	NYCS Bullet, Standard Set - Franklin Avenue Shuttle (R32)
-NYCS-bull-trans-T-Std-black.svg	T.black	E01D	NYCS Bullet, Standard Set - T Local (R32)
-NYCS-bull-trans-U-Std.svg	U	E01E	NYCS Bullet, Standard Set - U Local (R32)
-NYCS-bull-trans-V-Std.svg	V	E01F	NYCS Bullet, Standard Set - V Local
-NYCS-bull-trans-Wd-Std.svg	Wd	E020	NYCS Bullet, Standard Set - W Express
-NYCS-bull-trans-X-Std.svg	X	E021	NYCS Bullet, Standard Set - X Local (R32)
-NYCS-bull-trans-Y-Std.svg	Y	E022	NYCS Bullet, Standard Set - Y Local (R32)
-NYCS-bull-trans-Z-Std.svg	Z	E023	NYCS Bullet, Standard Set - Z Local
+NYCS-bull-trans-A-Std.svg	A	E000	Eighth Avenue Express
+NYCS-bull-trans-B-Std.svg	B	E001	Sixth Avenue Express
+NYCS-bull-trans-Bd-Std.svg	Bd	E002	Sixth Avenue Express
+NYCS-bull-trans-Bs-Std.svg	Bs	E003	West End Local via Broadway (1986–1988)
+NYCS-bull-trans-Bsd-Std.svg	Bsd	E004	West End Express via Broadway (1986–1988)
+NYCS-bull-trans-C-Std.svg	C	E005	Eighth Avenue Local
+NYCS-bull-trans-Cd-Std.svg	Cd	E006	Eighth Avenue Express
+NYCS-bull-trans-D-Std.svg	D	E007	Sixth Avenue Express
+NYCS-bull-trans-Ds-Std.svg	Ds	E008	Brighton Local via Broadway (1986–1988)
+NYCS-bull-trans-E-Std.svg	E	E009	Eighth Avenue Local
+NYCS-bull-trans-F-Std.svg	F	E00A	Sixth Avenue Local
+NYCS-bull-trans-G-Std.svg	G	E00B	Brooklyn–Queens Crosstown Local
+NYCS-bull-trans-H-Std.svg	H	E00C	Rockaway Park Shuttle
+NYCS-bull-trans-J-Std.svg	J	E00D	Nassau Street Local
+NYCS-bull-trans-Jd-Std.svg	Jd	E00E	Nassau Street Express
+NYCS-bull-trans-JFK.svg	JFK	E00F	JFK Express
+NYCS-bull-trans-K-Std.svg	K	E010	Eighth Avenue Local
+NYCS-bull-trans-L-Std.svg	L	E011	14th Street–Canarsie Local
+NYCS-bull-trans-M-Std-brown.svg	M.brown	E012	Nassau Street Local (1979–2010)
+NYCS-bull-trans-Md-Std-brown.svg	Md.brown	E013	Nassau Street Express (2001–2010)
+NYCS-bull-trans-N-Std.svg	N	E014	Broadway Express
+NYCS-bull-trans-P-Std.svg	P	E015	Unassigned
+NYCS-bull-trans-Q-Std.svg	Q	E016	Second Avenue Express
+NYCS-bull-trans-Q-Std-orange.svg	Q.orange	E017	Sixth Avenue Express (1988–2001)
+NYCS-bull-trans-R-Std.svg	R	E018	Broadway Local
+NYCS-bull-trans-Rd-Std-brown.svg	Rd.brown	E019	Nassau Street Express (1985–1987)
+NYCS-bull-trans-S6-Std.svg	S6	E01A	Sixth Avenue Shuttle
+NYCS-bull-trans-SB-Std.svg	SB	E01B	63rd Street Shuttle
+NYCS-bull-trans-SF-Std-silver.svg	SF.silver	E01C	Franklin Avenue Shuttle
+NYCS-bull-trans-T-Std-black.svg	T.black	E01D	Unassigned
+NYCS-bull-trans-U-Std.svg	U	E01E	Unassigned
+NYCS-bull-trans-V-Std.svg	V	E01F	Sixth Avenue Local
+NYCS-bull-trans-Wd-Std.svg	Wd	E020	Broadway Express
+NYCS-bull-trans-X-Std.svg	X	E021	Placeholder for proposed services
+NYCS-bull-trans-Y-Std.svg	Y	E022	Unassigned
+NYCS-bull-trans-Z-Std.svg	Z	E023	Nassau Street Express

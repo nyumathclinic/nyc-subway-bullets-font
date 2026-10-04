@@ -1,19 +1,19 @@
 file	key	codepoint	description
-NYCS-bull-trans---Std.svg	-	E000	NYCS Bullet, Standard Set - Blank Local
-NYCS-bull-trans-1-Std.svg	1	E001	NYCS Bullet, Standard Set - 1 Local
-NYCS-bull-trans-2-Std.svg	2	E002	NYCS Bullet, Standard Set - 2 Local
-NYCS-bull-trans-3-Std.svg	3	E003	NYCS Bullet, Standard Set - 3 Local
-NYCS-bull-trans-4-Std.svg	4	E004	NYCS Bullet, Standard Set - 4 Local
-NYCS-bull-trans-5-Std.svg	5	E005	NYCS Bullet, Standard Set - 5 Local
-NYCS-bull-trans-5d-Std.svg	5d	E006	NYCS Bullet, Standard Set - 5 Express
-NYCS-bull-trans-6-Std.svg	6	E007	NYCS Bullet, Standard Set - 6 Local
-NYCS-bull-trans-6d-Std.svg	6d	E008	NYCS Bullet, Standard Set - 6 Express
-NYCS-bull-trans-7-Std.svg	7	E009	NYCS Bullet, Standard Set - 7 Local
-NYCS-bull-trans-7d-Std.svg	7d	E00A	NYCS Bullet, Standard Set - 7 Express
-NYCS-bull-trans-8-Std.svg	8	E00B	NYCS Bullet, Standard Set - 8 Local (R62A)
-NYCS-bull-trans-9-Std.svg	9	E00C	NYCS Bullet, Standard Set - 9 Local
-NYCS-bull-trans-10-Std.svg	10	E00D	NYCS Bullet, Standard Set - 10 (R62A)
-NYCS-bull-trans-11-Std.svg	11	E00E	NYCS Bullet, Standard Set - 11 (R62A)
-NYCS-bull-trans-12-Std.svg	12	E00F	NYCS Bullet, Standard Set - 12 (R62A)
-NYCS-bull-trans-13-Std.svg	13	E010	NYCS Bullet, Standard Set - 13 (R62A)
-NYCS-bull-trans-S-Std.svg	S	E011	NYCS Bullet, Standard Set - Shuttles
+NYCS-bull-trans---Std.svg	-	E000	Blank
+NYCS-bull-trans-1-Std.svg	1	E001	Broadway–Seventh Avenue Local
+NYCS-bull-trans-2-Std.svg	2	E002	Seventh Avenue Express
+NYCS-bull-trans-3-Std.svg	3	E003	Seventh Avenue Express
+NYCS-bull-trans-4-Std.svg	4	E004	Lexington Avenue Express
+NYCS-bull-trans-5-Std.svg	5	E005	Lexington Avenue Express
+NYCS-bull-trans-5d-Std.svg	5d	E006	Lexington Avenue Express
+NYCS-bull-trans-6-Std.svg	6	E007	Lexington Avenue Local
+NYCS-bull-trans-6d-Std.svg	6d	E008	Pelham Express
+NYCS-bull-trans-7-Std.svg	7	E009	Flushing Local
+NYCS-bull-trans-7d-Std.svg	7d	E00A	Flushing Express
+NYCS-bull-trans-8-Std.svg	8	E00B	Unassigned
+NYCS-bull-trans-9-Std.svg	9	E00C	Broadway–Seventh Avenue Local
+NYCS-bull-trans-10-Std.svg	10	E00D	Unassigned
+NYCS-bull-trans-11-Std.svg	11	E00E	Unassigned
+NYCS-bull-trans-12-Std.svg	12	E00F	Unassigned
+NYCS-bull-trans-13-Std.svg	13	E010	Unassigned
+NYCS-bull-trans-S-Std.svg	S	E011	Shuttle
