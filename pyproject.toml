@@ -1,6 +1,6 @@
 [project]
 name = "nycbullets"
-version = "0.1.0"
+version = "1.0.0"
 description = "Build OpenType color fonts (SVG + COLR) from the NYC Subway bullets on Wikimedia Commons"
 requires-python = ">=3.11"
 license = "MIT"

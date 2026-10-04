@@ -44,7 +44,7 @@ from . import mapping, svgnorm
 from .config import FONT_DIR, SOURCE_DIR, BulletSet, load_config
 from .credits import credits_for
 
-VERSION = "0.100"
+VERSION = "1.000"
 VENDOR = "NYCB"
 
 SPACE_WIDTH = 250

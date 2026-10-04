@@ -27,10 +27,22 @@ tdslocations = {
 -- the bullets credited in the documentation, which are CC BY 4.0.
 uploadconfig = {
   pkg         = "nycbullets",
+  version     = "1.0 2026-10-04",
   author      = "Matthew Leingang",
+  uploader    = "Matthew Leingang",
+  ctanPath    = "/macros/luatex/latex/nycbullets",
+  update      = false,
   license     = {"lppl1.3c", "cc0", "cc-by-4"},
   summary     = "New York City Subway route bullets for LuaLaTeX",
+  description = [[The package typesets the route bullets of the New York
+City Subway (the colored circles and diamonds with the route letter or
+number) in full color with LuaLaTeX, and in monochrome with XeLaTeX, from
+the accompanying OpenType color fonts. The bullet artwork comes from
+Wikimedia Commons and is almost entirely in the public domain.]],
   repository  = "https://github.com/nyumathclinic/nyc-subway-bullets-font",
   bugtracker  = "https://github.com/nyumathclinic/nyc-subway-bullets-font/issues",
   home        = "https://nyumathclinic.github.io/nyc-subway-bullets-font/",
+  note        = [[The fonts and the .def and key-table files are generated
+by a Python pipeline from the SVG files on Wikimedia Commons; the
+pipeline is in the repository.]],
 }

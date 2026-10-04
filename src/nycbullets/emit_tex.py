@@ -20,7 +20,7 @@ from .credits import credits_for
 from .fontbuild import VERSION
 
 # Fixed, so that regenerating the files from unchanged data changes nothing.
-DATE = "2026-10-03"
+DATE = "2026-10-04"
 
 # No blank lines in these files: one would be a \par where the file is
 # first read, which may be in the middle of a paragraph.

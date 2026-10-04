@@ -13,6 +13,12 @@ comes from the public-domain collection on Wikimedia Commons:
 
 See `nycbullets.pdf` for usage and the full list of bullets.
 
+The fonts, the `.def` files and the key tables are generated from the
+Commons SVG files by a Python pipeline. It and the issue tracker are at
+<https://github.com/nyumathclinic/nyc-subway-bullets-font>; there is a
+specimen of every bullet at
+<https://nyumathclinic.github.io/nyc-subway-bullets-font/>.
+
 ## License
 
 The LaTeX code may be distributed and/or modified under the conditions of
