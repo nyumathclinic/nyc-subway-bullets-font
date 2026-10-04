@@ -21,6 +21,9 @@ Commons set becomes one font:
 | `fonts/NYCSubwayBullets-Legacy.ttf`    | Legacy set                      |
 | `fonts/NYCSubwayBullets-All.ttf`       | all of the above, each once     |
 
+All the fonts, with their credits and licenses, can be downloaded at once
+as [NYCSubwayBullets.zip](https://nyumathclinic.github.io/nyc-subway-bullets-font/fonts/NYCSubwayBullets.zip).
+
 Each font contains three versions of every bullet. Applications use the
 one they support:
 

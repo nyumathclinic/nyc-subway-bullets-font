@@ -35,6 +35,10 @@ becomes one font:
 | [NYCSubwayBullets-Legacy.ttf](fonts/NYCSubwayBullets-Legacy.ttf)       | Legacy set                   |
 | [NYCSubwayBullets-All.ttf](fonts/NYCSubwayBullets-All.ttf)             | all of the above, each once  |
 
+Or download them all at once:
+[NYCSubwayBullets.zip](fonts/NYCSubwayBullets.zip) (the fonts, their
+credits and licenses).
+
 Each font contains three versions of every bullet. Applications use the
 one they support:
 
