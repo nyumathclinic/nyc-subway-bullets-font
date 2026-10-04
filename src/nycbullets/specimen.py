@@ -35,6 +35,7 @@ LAYOUT_CSS = """\
 .specimen-desc { font-size: .7rem; color: var(--md-default-fg-color--light, #666);
         line-height: 1.3; }
 .specimen-cp { font-size: .7rem; color: var(--md-default-fg-color--lighter, #999); }
+.lyric-bullet { font-size: 1.3em; vertical-align: -0.1em; }
 """
 
 PAGE = """<!doctype html>

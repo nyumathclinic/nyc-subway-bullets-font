@@ -6,6 +6,18 @@ OpenType color fonts of the New York City Subway route bullets, plus a
 LaTeX package (`nycbullets`) for using them. See every bullet in the
 [specimen](specimen.md).
 
+> You must take the <span class="f-std lyric-bullet">A</span> train<br>
+> To go to Sugar Hill way up in Harlem
+>
+> — Ella Fitzgerald
+
+<!-- separate the two quotations -->
+
+> Same faces every day, but you don't know their names<br>
+> Party people going places on the <span class="f-std lyric-bullet">D</span> train
+>
+> — Beastie Boys
+
 The artwork comes from the
 [New York City Subway bullets](https://commons.wikimedia.org/wiki/Category:New_York_City_Subway_bullets)
 collection on Wikimedia Commons. Nearly all of it is in the public domain;
