@@ -1,25 +1,27 @@
 # NYC Subway Bullets fonts
 
+<p class="specimen-b f-std">1 2 3 A C E 7d SIR</p>
+
 OpenType color fonts of the New York City Subway route bullets, plus a
 LaTeX package (`nycbullets`) for using them. See every bullet in the
-[specimen](https://nyumathclinic.github.io/nyc-subway-bullets-font/specimen/).
+[specimen](specimen.md).
 
 The artwork comes from the
 [New York City Subway bullets](https://commons.wikimedia.org/wiki/Category:New_York_City_Subway_bullets)
 collection on Wikimedia Commons. Nearly all of it is in the public domain;
-the exceptions are credited in [fonts/CREDITS.md](fonts/CREDITS.md). Each
-Commons set becomes one font:
+the exceptions are listed in the [credits](credits.md). Each Commons set
+becomes one font:
 
-| Font file                              | Commons set                     |
-|----------------------------------------|---------------------------------|
-| `fonts/NYCSubwayBullets-Standard.ttf`  | Standard set                    |
-| `fonts/NYCSubwayBullets-Helvetica.ttf` | Helvetica set                   |
-| `fonts/NYCSubwayBullets-NYCTA.ttf`     | NYCTA Standard Medium set       |
-| `fonts/NYCSubwayBullets-R62A.ttf`      | R62A                            |
-| `fonts/NYCSubwayBullets-R32.ttf`       | R32                             |
-| `fonts/NYCSubwayBullets-Retired.ttf`   | Retired (with subcategories)    |
-| `fonts/NYCSubwayBullets-Legacy.ttf`    | Legacy set                      |
-| `fonts/NYCSubwayBullets-All.ttf`       | all of the above, each once     |
+| Font                                                              | Commons set                  |
+|-------------------------------------------------------------------|------------------------------|
+| [NYCSubwayBullets-Standard.ttf](fonts/NYCSubwayBullets-Standard.ttf)   | Standard set                 |
+| [NYCSubwayBullets-Helvetica.ttf](fonts/NYCSubwayBullets-Helvetica.ttf) | Helvetica set                |
+| [NYCSubwayBullets-NYCTA.ttf](fonts/NYCSubwayBullets-NYCTA.ttf)         | NYCTA Standard Medium set    |
+| [NYCSubwayBullets-R62A.ttf](fonts/NYCSubwayBullets-R62A.ttf)           | R62A                         |
+| [NYCSubwayBullets-R32.ttf](fonts/NYCSubwayBullets-R32.ttf)             | R32                          |
+| [NYCSubwayBullets-Retired.ttf](fonts/NYCSubwayBullets-Retired.ttf)     | Retired (with subcategories) |
+| [NYCSubwayBullets-Legacy.ttf](fonts/NYCSubwayBullets-Legacy.ttf)       | Legacy set                   |
+| [NYCSubwayBullets-All.ttf](fonts/NYCSubwayBullets-All.ttf)             | all of the above, each once  |
 
 Each font contains three versions of every bullet. Applications use the
 one they support:
@@ -43,8 +45,8 @@ application that applies standard ligatures:
 
 Separate adjacent bullets with spaces: `A C E`, not `ACE`. Every bullet
 also has a Private Use Area code point. The full key and code point tables
-are in [docs/nycbullets.pdf](docs/nycbullets.pdf) and
-[data/mappings/](data/mappings/).
+are in the [specimen](specimen.md) and in the
+[package documentation](nycbullets.pdf).
 
 In the All font, keys outside the Standard set carry a set tag after the
 route, e.g. `F.helv` or `B.nycta.broadway`.
@@ -59,8 +61,9 @@ Take the \nycbullet{F} or \nycbullet{Fd} to Coney Island.
 \nycbullet[helvetica]{M.brown}
 ```
 
-See [docs/nycbullets.pdf](docs/nycbullets.pdf). To install it into your
-`TEXMFHOME`, run `make install`.
+See the [package documentation](nycbullets.pdf). To install it into your
+`TEXMFHOME`, run `make install` in a checkout of the
+[repository](https://github.com/nyumathclinic/nyc-subway-bullets-font).
 
 ## Rebuilding
 
@@ -71,5 +74,5 @@ make all     # download → key tables → fonts → specimens → LaTeX docs
 make check   # Python and l3build tests
 ```
 
-See [docs/PIPELINE.md](docs/PIPELINE.md) for what each step does, how to
-edit the keys, and how to refresh from Commons.
+See [Building the fonts](PIPELINE.md) for what each step does, how to edit
+the keys, and how to refresh from Commons.

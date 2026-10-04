@@ -194,6 +194,14 @@ byte-identical fonts.
 code point. Open it in Safari (SVG table) and Chrome (COLR table) to check
 colors, sizes and ligatures. `specimens/` is not committed.
 
+The same specimen is a page of the documentation site. `make site` builds
+the site into `site/` with MkDocs (configured in `mkdocs.yml`), and
+`make serve` previews it at <http://127.0.0.1:8000>. The site's pages are
+the Markdown files in `docs/`. The hooks in `src/nycbullets/mkdocs_hooks.py`
+add the specimen page, the credits and the font files. On every push to
+`main`, the `docs` GitHub workflow builds the site and publishes it to
+GitHub Pages.
+
 ## 5. LaTeX package — `make latex`, `make doc`, `make check`
 
 Source: `src/nycbullets/emit_tex.py` and `latex/`.

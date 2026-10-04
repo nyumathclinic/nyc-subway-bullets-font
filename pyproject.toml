@@ -17,6 +17,10 @@ nycbullets = "nycbullets.cli:main"
 
 [dependency-groups]
 dev = ["pytest>=8", "uharfbuzz>=0.40"]
+docs = [
+    "mkdocs>=1.6",
+    "mkdocs-material>=9.7.7",
+]
 
 [build-system]
 requires = ["hatchling"]

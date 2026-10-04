@@ -4,6 +4,8 @@
 #   make mappings   add new files to data/mappings/*.tsv (keeps your edits)
 #   make fonts      build fonts/NYCSubwayBullets-*.ttf
 #   make specimens  write specimens/index.html for checking in a browser
+#   make site       build the documentation site into site/ (MkDocs)
+#   make serve      preview the documentation site at http://127.0.0.1:8000
 #   make latex      generate the LaTeX data files and copy the fonts
 #   make doc        typeset latex/nycbullets.pdf
 #   make check      run the Python tests and the l3build tests
@@ -17,7 +19,7 @@ UV      ?= uv
 RUN     := $(UV) run nycbullets
 L3BUILD ?= l3build
 
-.PHONY: all download mappings fonts specimens latex doc check ctan install clean
+.PHONY: all download mappings fonts specimens site serve latex doc check ctan install clean
 
 all: download mappings fonts specimens doc
 
@@ -32,6 +34,12 @@ fonts:
 
 specimens:
 	$(RUN) specimen
+
+site:
+	$(UV) run --group docs mkdocs build --strict
+
+serve:
+	$(UV) run --group docs mkdocs serve
 
 latex:
 	$(RUN) tex
@@ -52,4 +60,4 @@ install: latex
 
 clean:
 	cd latex && $(L3BUILD) clean
-	rm -rf specimens
+	rm -rf specimens site

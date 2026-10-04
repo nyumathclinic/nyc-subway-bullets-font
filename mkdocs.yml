@@ -1,0 +1,52 @@
+site_name: NYC Subway Bullets
+site_description: OpenType color fonts of the New York City Subway route bullets, and a LaTeX package for using them.
+site_author: Matthew Leingang
+site_url: https://nyumathclinic.github.io/nyc-subway-bullets-font/
+repo_url: https://github.com/nyumathclinic/nyc-subway-bullets-font
+repo_name: nyumathclinic/nyc-subway-bullets-font
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.top
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+nav:
+  - Home: index.md
+  - Specimen: specimen.md
+  - Building the fonts: PIPELINE.md
+  - Credits: credits.md
+
+# Generates specimen.md, credits.md and stylesheets/bullets.css, and
+# publishes fonts/*.ttf.
+hooks:
+  - src/nycbullets/mkdocs_hooks.py
+
+extra_css:
+  - stylesheets/bullets.css
+
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.superfences
+
+validation:
+  links:
+    not_found: warn
+    absolute_links: info

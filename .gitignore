@@ -13,3 +13,4 @@ specimens/
 # Downloaded, but under a license we don't use (CC BY-SA; see
 # allowed_licenses in config/sets.toml), so not redistributed here.
 sources/commons/Bullet QB Red TEST.svg
+site/
