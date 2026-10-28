@@ -3,56 +3,56 @@
 \ProvidesExplFile{nycbullets-nycta.def}{2026-10-04}{1.000}{nycbullets NYCTA keys}
 \nycbullets_declare_keys:nn {nycta}
   {
-    {1} {E000}
-    {2} {E001}
-    {3} {E002}
-    {4} {E003}
-    {4d} {E004}
-    {5} {E005}
-    {5d} {E006}
-    {6} {E007}
-    {6d} {E008}
-    {7} {E009}
-    {7d} {E00A}
-    {9} {E00B}
-    {A} {E00C}
-    {A.sixth} {E00D}
-    {B} {E00E}
-    {B.broadway} {E00F}
-    {Bd} {E010}
-    {Bd.broadway} {E011}
-    {C} {E012}
-    {Cd} {E013}
-    {D} {E014}
-    {D.broadway} {E015}
-    {E} {E016}
-    {F} {E017}
-    {Fd} {E018}
-    {G} {E019}
-    {H} {E01A}
-    {J} {E01B}
-    {Jd} {E01C}
-    {K} {E01D}
-    {K.canarsie} {E01E}
-    {L} {E01F}
-    {M} {E020}
-    {M.nassau} {E021}
-    {Md.nassau} {E022}
-    {N} {E023}
-    {Nd} {E024}
-    {Q} {E025}
-    {Q.sixth} {E026}
-    {Qd} {E027}
-    {R} {E028}
-    {Rd} {E029}
-    {Rd.nassau} {E02A}
-    {S} {E02B}
-    {S.63} {E02C}
-    {S.rockaway} {E02D}
-    {S.sixth} {E02E}
-    {T} {E02F}
-    {V} {E030}
-    {W} {E031}
-    {Wd} {E032}
-    {Z} {E033}
+    {1} {E000} {1}
+    {2} {E001} {2}
+    {3} {E002} {3}
+    {4} {E003} {4}
+    {4d} {E004} {4}
+    {5} {E005} {5}
+    {5d} {E006} {5}
+    {6} {E007} {6}
+    {6d} {E008} {6}
+    {7} {E009} {7}
+    {7d} {E00A} {7}
+    {9} {E00B} {9}
+    {A} {E00C} {A}
+    {A.sixth} {E00D} {A}
+    {B} {E00E} {B}
+    {B.broadway} {E00F} {B}
+    {Bd} {E010} {B}
+    {Bd.broadway} {E011} {B}
+    {C} {E012} {C}
+    {Cd} {E013} {C}
+    {D} {E014} {D}
+    {D.broadway} {E015} {D}
+    {E} {E016} {E}
+    {F} {E017} {F}
+    {Fd} {E018} {F}
+    {G} {E019} {G}
+    {H} {E01A} {H}
+    {J} {E01B} {J}
+    {Jd} {E01C} {J}
+    {K} {E01D} {K}
+    {K.canarsie} {E01E} {K}
+    {L} {E01F} {L}
+    {M} {E020} {M}
+    {M.nassau} {E021} {M}
+    {Md.nassau} {E022} {M}
+    {N} {E023} {N}
+    {Nd} {E024} {N}
+    {Q} {E025} {Q}
+    {Q.sixth} {E026} {Q}
+    {Qd} {E027} {Q}
+    {R} {E028} {R}
+    {Rd} {E029} {R}
+    {Rd.nassau} {E02A} {R}
+    {S} {E02B} {S}
+    {S.63} {E02C} {S}
+    {S.rockaway} {E02D} {S}
+    {S.sixth} {E02E} {S}
+    {T} {E02F} {T}
+    {V} {E030} {V}
+    {W} {E031} {W}
+    {Wd} {E032} {W}
+    {Z} {E033} {Z}
   }

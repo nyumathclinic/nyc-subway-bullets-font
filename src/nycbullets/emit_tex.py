@@ -4,7 +4,7 @@ Generate the data files for the nycbullets LaTeX package.
 Written into latex/:
 
   nycbullets-sets.def          the list of sets and their font files
-  nycbullets-<set>.def         key -> code point table for one set
+  nycbullets-<set>.def         key -> code point and copy text for one set
   nycbullets-keytable-<set>.tex  documentation table of every bullet in a set
   nycbullets-credits.tex       attribution for bullets that require it
   NYCSubwayBullets-*.ttf       copies of the fonts (for l3build to package)
@@ -17,7 +17,7 @@ import shutil
 from . import mapping
 from .config import LATEX_DIR, BulletSet, load_config
 from .credits import credits_for
-from .fontbuild import VERSION
+from .fontbuild import VERSION, copy_text
 
 # Fixed, so that regenerating the files from unchanged data changes nothing.
 DATE = "2026-10-04"
@@ -71,7 +71,7 @@ def set_def(bset: BulletSet, rows: list[mapping.Row]) -> str:
     lines.append(f"\\nycbullets_declare_keys:nn {{{bset.id}}}")
     lines.append("  {")
     for r in sorted(rows, key=lambda r: r.codepoint):
-        lines.append(f"    {{{r.key}}} {{{r.codepoint:04X}}}")
+        lines.append(f"    {{{r.key}}} {{{r.codepoint:04X}}} {{{copy_text(r.key)}}}")
     lines.append("  }")
     return "\n".join(lines) + "\n"
 

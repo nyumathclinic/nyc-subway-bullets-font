@@ -3,40 +3,40 @@
 \ProvidesExplFile{nycbullets-r32.def}{2026-10-04}{1.000}{nycbullets R32 keys}
 \nycbullets_declare_keys:nn {r32}
   {
-    {A} {E000}
-    {B} {E001}
-    {Bd} {E002}
-    {Bs} {E003}
-    {Bsd} {E004}
-    {C} {E005}
-    {Cd} {E006}
-    {D} {E007}
-    {Ds} {E008}
-    {E} {E009}
-    {F} {E00A}
-    {G} {E00B}
-    {H} {E00C}
-    {J} {E00D}
-    {Jd} {E00E}
-    {JFK} {E00F}
-    {K} {E010}
-    {L} {E011}
-    {M.brown} {E012}
-    {Md.brown} {E013}
-    {N} {E014}
-    {P} {E015}
-    {Q} {E016}
-    {Q.orange} {E017}
-    {R} {E018}
-    {Rd.brown} {E019}
-    {S6} {E01A}
-    {SB} {E01B}
-    {SF.silver} {E01C}
-    {T.black} {E01D}
-    {U} {E01E}
-    {V} {E01F}
-    {Wd} {E020}
-    {X} {E021}
-    {Y} {E022}
-    {Z} {E023}
+    {A} {E000} {A}
+    {B} {E001} {B}
+    {Bd} {E002} {B}
+    {Bs} {E003} {B}
+    {Bsd} {E004} {B}
+    {C} {E005} {C}
+    {Cd} {E006} {C}
+    {D} {E007} {D}
+    {Ds} {E008} {D}
+    {E} {E009} {E}
+    {F} {E00A} {F}
+    {G} {E00B} {G}
+    {H} {E00C} {H}
+    {J} {E00D} {J}
+    {Jd} {E00E} {J}
+    {JFK} {E00F} {JFK}
+    {K} {E010} {K}
+    {L} {E011} {L}
+    {M.brown} {E012} {M}
+    {Md.brown} {E013} {M}
+    {N} {E014} {N}
+    {P} {E015} {P}
+    {Q} {E016} {Q}
+    {Q.orange} {E017} {Q}
+    {R} {E018} {R}
+    {Rd.brown} {E019} {R}
+    {S6} {E01A} {S6}
+    {SB} {E01B} {SB}
+    {SF.silver} {E01C} {SF}
+    {T.black} {E01D} {T}
+    {U} {E01E} {U}
+    {V} {E01F} {V}
+    {Wd} {E020} {W}
+    {X} {E021} {X}
+    {Y} {E022} {Y}
+    {Z} {E023} {Z}
   }

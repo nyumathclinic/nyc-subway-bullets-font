@@ -25,6 +25,7 @@ ligature lookup the longest match wins: SIRd beats SIR beats S.
 
 from __future__ import annotations
 
+import re
 import sys
 from pathlib import Path
 
@@ -58,12 +59,39 @@ TIMESTAMP = 3786825600  # 2024-01-01
 # Glyph names
 # ---------------------------------------------------------------------------
 
-def glyph_name(key: str) -> str:
-    """bullet.F, bullet.Fd, bullet.M.brown, bullet.dash, bullet.Ad.1979_1987"""
+def split_key(key: str) -> tuple[str, str, str]:
+    """Fd -> (F, d, ''), SIRd -> (SIR, d, ''), Ad.1979-1987 -> (A, d, 1979-1987)"""
 
-    if key.startswith("-"):
-        key = "dash" + key[1:]
-    return "bullet." + key.replace("-", "_")
+    head, _, variant = key.partition(".")
+    # Lower-case d (diamond) and s (special) after the route are modifiers.
+    route = re.sub(r"(?<=[-A-Z0-9])[ds]+$", "", head)
+    return route, head[len(route):], variant
+
+
+def copy_text(key: str) -> str:
+    """The text a bullet copies as: its route."""
+
+    return split_key(key)[0]
+
+
+def glyph_name(key: str) -> str:
+    """F.bullet, F.bullet_d, S_I_R.bullet, M.bullet.brown, hyphen.bullet,
+    A.bullet_d.1979_1987
+
+    Following the Adobe Glyph List convention, the part before the first dot
+    names the route's characters, joined by underscores.  The bullets are in
+    the Private Use Area, so PDF producers (luaotfload among them) go by the
+    glyph name to decide what text a bullet copies as: F.bullet_d copies as
+    "F".
+    """
+
+    route, mods, variant = split_key(key)
+    name = "_".join(char_glyph_name(ch) for ch in route) + ".bullet"
+    if mods:
+        name += "_" + mods
+    if variant:
+        name += "." + variant.replace("-", "_")
+    return name
 
 
 def char_glyph_name(ch: str) -> str:
